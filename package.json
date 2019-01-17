@@ -10,7 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "yarn build && super-ci",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -21,5 +21,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "build-size-super-plugin": "^0.0.3",
+    "super-ci": "^0.0.8",
+    "tsc": "^1.20150623.0"
+  }
 }
