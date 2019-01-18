@@ -5,3 +5,4 @@ module.exports = async function main() {
     path: "./build/static/js",
   });
 };
+
