@@ -1,7 +1,7 @@
-import { buildSize } from "build-size-super-plugin";
+const { buildSize } = require("build-size-super-plugin");
 
-export async function main() {
+module.exports = async function main() {
   await buildSize({
     path: "./build/static/js",
   });
-}
+};
