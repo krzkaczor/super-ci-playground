@@ -1946,10 +1946,10 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-build-size-super-plugin@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/build-size-super-plugin/-/build-size-super-plugin-0.0.3.tgz#b1d9af657a8c7134a4bd9567fb0f5214d39e19e3"
-  integrity sha512-o/0VJJ4m7AfVfavp83dW3S3A9hhZfQnmDbOFeoq/RNUw114j9f4jv083bBdNUzSHE8nE51bJcySV6gGoIGSMfQ==
+build-size-super-plugin@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/build-size-super-plugin/-/build-size-super-plugin-0.0.4.tgz#2e267ee16c8730919f7ceefe9d2d99e80847c1b1"
+  integrity sha512-leOsKWCM6VpaeDcGEIBxsiIzjMd18H56ggB6865A5DMpqB7PdYSKS0FegPcK3F9ChVLcwYNchoFoMylPpEsSNA==
   dependencies:
     bytes "^3.0.0"
     get-folder-size "^2.0.0"
@@ -9064,10 +9064,10 @@ stylehacks@^4.0.0:
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
 
-super-ci@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/super-ci/-/super-ci-0.0.9.tgz#eec52771abc249ab1e4c9ced1a388641d06cfc00"
-  integrity sha512-M82/8gf+tM7KvGELSxlVB4WrWc/zASmdF4PiLvLDnUGpuyIM9J3MC7zOVrkpgjJ5OsgHJlLjo7a6ScETG/W1qg==
+super-ci@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/super-ci/-/super-ci-0.0.10.tgz#e747161ae577b599adfc1538714cfddcb4e381ab"
+  integrity sha512-XH8mVHy8M8pwMsl8vej+akQ+dUpdzsFn7ZDjdQZsC/qsvn0U78UgaAGRyPFtspxhuCu4MeLCpvTB0Y7ffJ9k0A==
   dependencies:
     glob "^7.1.3"
     mkdirp "^0.5.1"
