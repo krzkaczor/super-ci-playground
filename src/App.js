@@ -5,6 +5,8 @@ import './App.css';
 class App extends Component {
   onClick=() => {
     console.log("Test, test, test, test!");
+    console.log("123123124123");
+    console.log("TEEEEEEEEEST");
   }
 
   render() {
