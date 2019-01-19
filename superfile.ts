@@ -1,4 +1,4 @@
-import { superCI } from "super-ci";
+const { superCI } = require("super-ci");
 const { buildSize } = require("build-size-super-plugin");
 
 module.exports.main = async function main() {
