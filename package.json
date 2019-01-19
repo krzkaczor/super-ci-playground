@@ -25,6 +25,6 @@
   "devDependencies": {
     "build-size-super-plugin": "^0.0.4",
     "lodash": "^4.17.11",
-    "super-ci": "^0.0.11"
+    "super-ci": "^0.0.12"
   }
 }
