@@ -10,7 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "yarn build && super-ci",
+    "test": "PUBLIC_URL=. yarn build && super-ci",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
