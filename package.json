@@ -10,7 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "yarn build && super-ci",
+    "test": "PUBLIC_URL=. yarn build && super-ci",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -24,6 +24,7 @@
   ],
   "devDependencies": {
     "build-size-super-plugin": "^0.0.4",
-    "super-ci": "^0.0.10"
+    "lodash": "^4.17.11",
+    "super-ci": "^0.0.12"
   }
 }

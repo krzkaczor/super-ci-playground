@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { kebabCase } from "lodash";
 
 class App extends Component {
-  onClick=() => {
+  onClick = () => {
     console.log("Test, test, test, test!");
-  }
+    console.log("123123124123");
+    console.log("TEEEEEEEEEST");
+    console.log("Kebab case!: ", kebabCase);
+  };
 
   render() {
     return (
