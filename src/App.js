@@ -9,6 +9,7 @@ class App extends Component {
     console.log("123123124123");
     console.log("TEEEEEEEEEST");
     console.log("Kebab case!: ", kebabCase);
+    alert("AAAAAAAA this button does nothing!");
   };
 
   render() {
