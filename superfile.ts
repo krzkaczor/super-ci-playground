@@ -9,7 +9,7 @@ module.exports.main = async function main() {
     path: "./build/static/js",
   });
 
-  
+  await visReg();  
 
   if (superCI.isPr()) {
     await superCI.saveCollection("build", join(__dirname, "build"));
@@ -17,7 +17,8 @@ module.exports.main = async function main() {
   }
 };
 
-function visReg() {
+async function visReg() {
   superCI.getCollection("storybook-vis-reg", join(__dirname, "base-screenshots"));
-  exec("yarn storybook:screenshots");
+  const result = await exec("yarn storybook:screenshots");
+  console.log(result);
 }
