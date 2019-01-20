@@ -18,7 +18,13 @@ module.exports.main = async function main() {
 };
 
 async function visReg() {
-  superCI.getCollection("storybook-vis-reg", join(__dirname, "base-screenshots"));
+  await superCI.getCollection("storybook-vis-reg", join(__dirname, ".reg/expected"));
   const result = await exec("yarn storybook:screenshots");
-  console.log(result);
+  await superCI.saveCollection("storybook-vis-reg", join(__dirname, "__screnshots__"));
+
+  const result2 = await exec("./node_modules/.bin/reg-suit compare");
+  console.log(result2);
+
+  await result.saveCollection("storybook-vis-reg-report", join(__dirname, ".reg"));
+  report(`Vis reg report: https://s3-eu-west-1.amazonaws.com/superci-bucket/91cf4ed2-b523-4cca-874c-0ee73f3b5a72/${superCI.context.currentSha}/storybook-vis-reg-report/index.html`);
 }
