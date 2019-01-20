@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@storybook/addon-viewport": "^4.1.7",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
@@ -11,7 +12,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "PUBLIC_URL=. yarn build && super-ci",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "storybook:screenshots": "storybook-chrome-screenshot -p 9001 --inject-files ./.storybook/disable-animations.js",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -23,8 +27,16 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^4.1.7",
+    "@storybook/addon-links": "^4.1.7",
+    "@storybook/addons": "^4.1.7",
+    "@storybook/react": "^4.1.7",
+    "await-exec": "^0.1.2",
+    "babel-loader": "^8.0.5",
     "build-size-super-plugin": "^0.0.4",
     "lodash": "^4.17.11",
+    "storybook-chrome-screenshot": "^1.4.0",
     "super-ci": "^0.0.12"
   }
 }
