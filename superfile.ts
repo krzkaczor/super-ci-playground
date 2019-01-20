@@ -24,7 +24,7 @@ module.exports.main = async function main() {
 async function visReg() {
   await superCI.getCollection("storybook-vis-reg", join(__dirname, ".reg/expected"));
   await exec("yarn storybook:screenshots");
-  await superCI.saveCollection("storybook-vis-reg", join(__dirname, "__screnshots__"));
+  await superCI.saveCollection("storybook-vis-reg", join(__dirname, "__screenshots__"));
 
   await exec("./node_modules/.bin/reg-suit compare");
 
