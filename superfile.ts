@@ -4,7 +4,7 @@ const exec = require("await-exec");
 const { superCI, report } = require("super-ci");
 const { buildSize } = require("build-size-super-plugin");
 
-const execOptions = { timeout: 10000, cwd: process.cwd(), log: true };
+const execOptions = { timeout: 100000, cwd: process.cwd(), log: true };
 
 module.exports.main = async function main() {
   await buildSize({
