@@ -22,17 +22,19 @@ module.exports.main = async function main() {
 };
 
 async function visReg() {
-  await superCI.getCollection("storybook-vis-reg", join(__dirname, ".reg/expected"));
   await exec("yarn storybook:screenshots");
   await superCI.saveCollection("storybook-vis-reg", join(__dirname, "__screenshots__"));
 
-  await exec("./node_modules/.bin/reg-suit compare");
+  if (superCI.isPr()) {
+    await superCI.getCollection("storybook-vis-reg", join(__dirname, ".reg/expected"));
+    await exec("./node_modules/.bin/reg-suit compare");
 
-  await superCI.saveCollection("storybook-vis-reg-report", join(__dirname, ".reg"));
+    await superCI.saveCollection("storybook-vis-reg-report", join(__dirname, ".reg"));
 
-  report(
-    `Vis reg report: https://s3-eu-west-1.amazonaws.com/superci-bucket/91cf4ed2-b523-4cca-874c-0ee73f3b5a72/${
-      superCI.context.currentSha
-    }/storybook-vis-reg-report/index.html`,
-  );
+    report(
+      `Vis reg report: https://s3-eu-west-1.amazonaws.com/superci-bucket/91cf4ed2-b523-4cca-874c-0ee73f3b5a72/${
+        superCI.context.currentSha
+      }/storybook-vis-reg-report/index.html`,
+    );
+  }
 }
