@@ -4,6 +4,8 @@ const exec = require("await-exec");
 const { superCI, report } = require("super-ci");
 const { buildSize } = require("build-size-super-plugin");
 
+const execOptions = { timeout: 10000, cwd: process.cwd(), log: true };
+
 module.exports.main = async function main() {
   await buildSize({
     path: "./build/static/js",
@@ -22,12 +24,12 @@ module.exports.main = async function main() {
 };
 
 async function visReg() {
-  await exec("yarn storybook:screenshots");
+  await exec("yarn storybook:screenshots", execOptions);
   await superCI.saveCollection("storybook-vis-reg", join(__dirname, "__screenshots__"));
 
   if (superCI.isPr()) {
     await superCI.getCollection("storybook-vis-reg", join(__dirname, ".reg/expected"));
-    await exec("./node_modules/.bin/reg-suit compare");
+    await exec("./node_modules/.bin/reg-suit compare", execOptions);
 
     await superCI.saveCollection("storybook-vis-reg-report", join(__dirname, ".reg"));
 
