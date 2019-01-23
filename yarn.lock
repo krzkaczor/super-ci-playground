@@ -11609,10 +11609,10 @@ subarg@^1.0.0:
   dependencies:
     minimist "^1.1.0"
 
-super-ci@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/super-ci/-/super-ci-0.0.12.tgz#26a1ed24b2814c0835d17668e26f9eece68134b2"
-  integrity sha512-9NcpYq1qBKPBS5bI8jge1IADogXpWzR2+pPFUGVjMPCNmSsPq/g6D28+1/LdlFzxGl4jwLwHT3J95gpF0YqrAQ==
+super-ci@^0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/super-ci/-/super-ci-0.0.13.tgz#e53fe0ea3355c0330864f65faf85f09816dbd42a"
+  integrity sha512-6+DOTZNTeKhj0nfKAmcavjvET9/eueTW5jzM6a6uyxLVNDidxsytpvAZmzk3tLwQ4uzFwr5mX0w98F5RCPK53w==
   dependencies:
     glob "^7.1.3"
     mime-types "^2.1.21"
