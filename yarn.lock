@@ -11614,10 +11614,10 @@ subarg@^1.0.0:
   dependencies:
     minimist "^1.1.0"
 
-super-ci@^0.0.14:
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/super-ci/-/super-ci-0.0.14.tgz#fb0b835d14535321575ed77b4634b58337460cb8"
-  integrity sha512-Md+2daRSmXXJUtJS4qhzhrZF2XJGdSyE1V/4AtVnUPU6hVRR5qr5t4dUhri7ajCjRlohetOkBuot0tjuZuACNA==
+super-ci@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/super-ci/-/super-ci-0.0.15.tgz#afdbb0b6e791c574c0b0e4aed1464746d260a2d3"
+  integrity sha512-4M2nDDxSuFKK90cxEHoUBNpeJ7EUEIYx/Yj/WojImCRrtGL5kSjlbALG7bRIGZa0lXTX+rja5pXz3nc7+DhGjQ==
   dependencies:
     glob "^7.1.3"
     mime-types "^2.1.21"
