@@ -42,7 +42,7 @@
     "reg-simple-keygen-plugin": "^0.7.16",
     "reg-suit": "^0.7.17",
     "storybook-chrome-screenshot": "^1.4.0",
-    "super-ci": "^0.0.16",
+    "super-ci": "^0.0.19",
     "typescript": "^3.2.4"
   }
 }
