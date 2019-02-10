@@ -11,7 +11,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "SKIP_PREFLIGHT_CHECK=true PUBLIC_URL=. yarn build && super-ci -o 0 superfile.js && super-ci -o 1 superfile2.js",
+    "test": "SKIP_PREFLIGHT_CHECK=true PUBLIC_URL=. yarn build && super-ci && super-ci -o 1 superfile2.js",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "storybook:screenshots": "storybook-chrome-screenshot -p 9001 --inject-files ./.storybook/disable-animations.js",
@@ -42,7 +42,7 @@
     "reg-simple-keygen-plugin": "^0.7.16",
     "reg-suit": "^0.7.17",
     "storybook-chrome-screenshot": "^1.4.0",
-    "super-ci": "0.0.23",
+    "super-ci": "0.0.24",
     "typescript": "^3.2.4"
   }
 }
