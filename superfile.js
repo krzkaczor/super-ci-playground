@@ -7,9 +7,9 @@ const { buildSize } = require("build-size-super-plugin");
 const execOptions = { timeout: 100000, cwd: process.cwd(), log: true };
 
 module.exports.main = async function main() {
-  await buildSize({
-    path: "./build/static/js",
-  });
+  // await buildSize({
+  //   path: "./build/static/js",
+  // });
 
   await visReg();
 
@@ -17,8 +17,8 @@ module.exports.main = async function main() {
     await superCI.saveCollection("build", join(__dirname, "build"));
     report({
       name: "Per commit deployment",
-      shortDescription: "Branch deployment",
-      description: `Branch deployment: ${superCI.getArtifactLink("build/index.html")}`,
+      shortDescription: `[Branch deployment](${superCI.getArtifactLink("build/index.html")})`,
+      description: `[Branch deployment](${superCI.getArtifactLink("build/index.html")})`,
       detailsUrl: superCI.getArtifactLink("build/index.html"),
     });
   }
@@ -36,8 +36,8 @@ async function visReg() {
 
     report({
       name: "Visual Regression",
-      shortDescription: "Changed: 1",
-      description: "Changed: 1\n New: 4\n Removed: 0",
+      shortDescription: "Changed: 1\n New: 4\n Removed: 0",
+      description: "",
       detailsUrl: superCI.getArtifactLink("storybook-vis-reg-report/index.html"),
     });
   }
