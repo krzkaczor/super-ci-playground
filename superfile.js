@@ -17,8 +17,7 @@ module.exports.main = async function main() {
     await superCI.saveCollection("build", join(__dirname, "build"));
     report({
       name: "Per commit deployment",
-      shortDescription: `[Branch deployment](${superCI.getArtifactLink("build/index.html")})`,
-      description: `[Branch deployment](${superCI.getArtifactLink("build/index.html")})`,
+      shortDescription: `Commit deployed`,
       detailsUrl: superCI.getArtifactLink("build/index.html"),
     });
   }
@@ -37,7 +36,6 @@ async function visReg() {
     report({
       name: "Visual Regression",
       shortDescription: "Changed: 1\n New: 4\n Removed: 0",
-      description: "",
       detailsUrl: superCI.getArtifactLink("storybook-vis-reg-report/index.html"),
     });
   }
