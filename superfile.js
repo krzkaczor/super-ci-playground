@@ -15,7 +15,12 @@ module.exports.main = async function main() {
 
   if (superCI.isPr()) {
     await superCI.saveCollection("build", join(__dirname, "build"));
-    report(`Branch deployment: ${superCI.getArtifactLink("build/index.html")}`);
+    report({
+      name: "Per commit deployment",
+      shortDescription: "Branch deployment",
+      description: `Branch deployment: ${superCI.getArtifactLink("build/index.html")}`,
+      detailsUrl: superCI.getArtifactLink("build/index.html"),
+    });
   }
 };
 
@@ -29,6 +34,11 @@ async function visReg() {
 
     await superCI.saveCollection("storybook-vis-reg-report", join(__dirname, ".reg"));
 
-    report(`Vis reg report: ${superCI.getArtifactLink("storybook-vis-reg-report/index.html")}/`);
+    report({
+      name: "Visual Regression",
+      shortDescription: "Changed: 1",
+      description: "Changed: 1\n New: 4\n Removed: 0",
+      detailsUrl: superCI.getArtifactLink("storybook-vis-reg-report/index.html"),
+    });
   }
 }
