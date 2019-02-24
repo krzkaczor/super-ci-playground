@@ -4,6 +4,8 @@ const exec = require("await-exec");
 const { superCI, report } = require("super-ci");
 const { buildSize } = require("build-size-super-plugin");
 
+const execOptions = { timeout: 100000, cwd: process.cwd(), log: true };
+
 module.exports.main = async function main() {
   await buildSize({
     path: "./build/static/js",
@@ -13,28 +15,28 @@ module.exports.main = async function main() {
 
   if (superCI.isPr()) {
     await superCI.saveCollection("build", join(__dirname, "build"));
-    report(
-      `Branch deployment: https://s3-eu-west-1.amazonaws.com/superci-bucket/91cf4ed2-b523-4cca-874c-0ee73f3b5a72/${
-        superCI.context.currentSha
-      }/build/index.html`,
-    );
+    report({
+      name: "Per commit deployment",
+      shortDescription: `Commit deployed`,
+      detailsUrl: superCI.getArtifactLink("build/index.html"),
+    });
   }
 };
 
 async function visReg() {
-  await exec("yarn storybook:screenshots");
+  await exec("yarn storybook:screenshots", execOptions);
   await superCI.saveCollection("storybook-vis-reg", join(__dirname, "__screenshots__"));
 
   if (superCI.isPr()) {
     await superCI.getCollection("storybook-vis-reg", join(__dirname, ".reg/expected"));
-    await exec("./node_modules/.bin/reg-suit compare");
+    await exec("./node_modules/.bin/reg-suit compare", execOptions);
 
     await superCI.saveCollection("storybook-vis-reg-report", join(__dirname, ".reg"));
 
-    report(
-      `Vis reg report: https://s3-eu-west-1.amazonaws.com/superci-bucket/91cf4ed2-b523-4cca-874c-0ee73f3b5a72/${
-        superCI.context.currentSha
-      }/storybook-vis-reg-report/index.html`,
-    );
+    report({
+      name: "Visual Regression",
+      shortDescription: "Changed: 1\n New: 4\n Removed: 0",
+      detailsUrl: superCI.getArtifactLink("storybook-vis-reg-report/index.html"),
+    });
   }
 }
