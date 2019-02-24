@@ -7,9 +7,9 @@ const { buildSize } = require("build-size-super-plugin");
 const execOptions = { timeout: 100000, cwd: process.cwd(), log: true };
 
 module.exports.main = async function main() {
-  // await buildSize({
-  //   path: "./build/static/js",
-  // });
+  await buildSize({
+    path: "./build/static/js",
+  });
 
   await visReg();
 
