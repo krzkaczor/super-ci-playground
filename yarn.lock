@@ -3219,13 +3219,15 @@ buffer@4.9.1, buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-build-size-super-plugin@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/build-size-super-plugin/-/build-size-super-plugin-0.0.5.tgz#16d50447f0dfe4cffb3e99ccf41642576785f01e"
-  integrity sha512-nVAnPw6UCl5VdI9qaYAcpFHg0bcMMEyKr4MedDAzkYrcuG6mUf12wVjYq/CiUuNCVmoj2ZUX3R+jIjCo3s4YSQ==
+build-size-super-plugin@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/build-size-super-plugin/-/build-size-super-plugin-0.0.6.tgz#2bf02b6b71ca8751fc89774f479a39652ee92c4d"
+  integrity sha512-+jW3FBRsmBRd0XX1l80dii+2VqpDm0Dh1GFUfASKA7GsS+XUZ2/cUxOWA/FLoDQG2B+Fp7zn2FOppYHH3aMYtA==
   dependencies:
     bytes "^3.0.0"
     get-folder-size "^2.0.0"
+    glob "^7.1.3"
+    lodash "^4.17.11"
 
 builtin-modules@^1.0.0:
   version "1.1.1"
@@ -11614,10 +11616,10 @@ subarg@^1.0.0:
   dependencies:
     minimist "^1.1.0"
 
-super-ci@^0.0.29:
-  version "0.0.29"
-  resolved "https://registry.yarnpkg.com/super-ci/-/super-ci-0.0.29.tgz#7857aae79bdf900882a6324c7988e27d742328b8"
-  integrity sha512-RoHdJ5Amg0Crp2pTwjDDRSabtc90e1smKkiC/ymsizefJsBUKcp09f1G5eLvWOuuz0U5h+vbBIYDcFjlJ1hLyQ==
+super-ci@^0.0.30:
+  version "0.0.30"
+  resolved "https://registry.yarnpkg.com/super-ci/-/super-ci-0.0.30.tgz#07590523b6ea39f9a24f6f8ee7fc13ef1ec68ec0"
+  integrity sha512-zsPPyAFlNc5kAUBPfGOmB45eK1el9jfJr03zc3h5/WctVhS5qd29E0av/t8ZDcbWRI68l4VGKb6X/PFSRu7arg==
   dependencies:
     commander "^2.19.0"
     glob "^7.1.3"
