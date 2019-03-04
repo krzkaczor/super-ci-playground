@@ -3219,10 +3219,10 @@ buffer@4.9.1, buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-build-size-super-plugin@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/build-size-super-plugin/-/build-size-super-plugin-0.0.7.tgz#2c5d2b7bd1772399fbc56e257547bc41df6bcc24"
-  integrity sha512-45lpI9B2sE+1wDTQDLA1QjvnRIzgH1+Vo3/eAYew2sUWntzxgkDvhGtTq7P618qsDEy0fWOzenKrylhC4Lc8DQ==
+build-size-super-plugin@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/build-size-super-plugin/-/build-size-super-plugin-0.0.8.tgz#5449e8df02815f621e46c945ce2afeab2b6aa00a"
+  integrity sha512-nOg9usUvWrYfnpNJTnJyWgE+qJCpbzsY+AbiyBPgbMWqagtOJpEJZyXyMAmOqK/iyOtqUSYhbFYN49RFAJ0BLQ==
   dependencies:
     bytes "^3.0.0"
     get-folder-size "^2.0.0"

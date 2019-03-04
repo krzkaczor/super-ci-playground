@@ -34,7 +34,7 @@
     "@storybook/react": "^4.1.7",
     "await-exec": "^0.1.2",
     "babel-loader": "^8.0.5",
-    "build-size-super-plugin": "^0.0.7",
+    "build-size-super-plugin": "^0.0.8",
     "lodash": "^4.17.11",
     "reg-keygen-git-hash-plugin": "^0.7.16",
     "reg-notify-github-plugin": "^0.7.19",
