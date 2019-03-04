@@ -12,6 +12,9 @@ module.exports.main = async function main() {
       {
         path: "./build/static/js/*.js",
       },
+      {
+        path: "./build/static/css/*.css",
+      },
     ],
   });
 
