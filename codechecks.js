@@ -2,7 +2,7 @@ const { join } = require("path");
 
 const exec = require("await-exec");
 const { codeChecks } = require("codechecks");
-const { buildSize } = require("build-size-super-plugin");
+const { buildSize } = require("codecheck-build-size");
 
 const execOptions = { timeout: 100000, cwd: process.cwd(), log: true };
 
