@@ -11,7 +11,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "SKIP_PREFLIGHT_CHECK=true PUBLIC_URL=. yarn build && super-ci",
+    "test": "SKIP_PREFLIGHT_CHECK=true PUBLIC_URL=. yarn build && codechecks",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "storybook:screenshots": "storybook-chrome-screenshot -p 9001 --inject-files ./.storybook/disable-animations.js",
@@ -34,7 +34,8 @@
     "@storybook/react": "^4.1.7",
     "await-exec": "^0.1.2",
     "babel-loader": "^8.0.5",
-    "build-size-super-plugin": "^0.0.8",
+    "codecheck-build-size": "^0.0.9",
+    "codechecks": "^0.0.33",
     "lodash": "^4.17.11",
     "reg-keygen-git-hash-plugin": "^0.7.16",
     "reg-notify-github-plugin": "^0.7.19",
@@ -42,7 +43,6 @@
     "reg-simple-keygen-plugin": "^0.7.16",
     "reg-suit": "^0.7.17",
     "storybook-chrome-screenshot": "^1.4.0",
-    "super-ci": "^0.0.31",
     "typescript": "^3.2.4"
   }
 }
