@@ -9,9 +9,15 @@ const execOptions = { timeout: 100000, cwd: process.cwd(), log: true };
 module.exports.main = async function main() {
   await exec("yarn storybook:screenshots", execOptions);
 
-  for (let i = 0; i < 100; i++)
-    await Promise.all([
+  const allPromises = [];
+  for (let i = 0; i < 1000; i++) {
+    allPromises.push(
       codeChecks.saveCollection("storybook-vis-reg", join(__dirname, "__screenshots__")),
+    );
+    allPromises.push(
       codeChecks.saveCollection("storybook-vis-reg-report", join(__dirname, ".reg")),
-    ]);
+    );
+  }
+
+  await Promise.all(allPromises);
 };
