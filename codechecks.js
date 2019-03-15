@@ -25,7 +25,10 @@ module.exports.main = async function main() {
     await codeChecks.success({
       name: "Per commit deployment",
       shortDescription: `Commit deployed`,
-      detailsUrl: codeChecks.getArtifactLink("build/index.html"),
+      detailsUrl: {
+        url: codeChecks.getArtifactLink("build/index.html"),
+        visibleName: "Deployment",
+      },
     });
   }
 };
