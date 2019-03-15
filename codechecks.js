@@ -27,7 +27,7 @@ module.exports.main = async function main() {
       shortDescription: `Commit deployed`,
       detailsUrl: {
         url: codeChecks.getArtifactLink("build/index.html"),
-        visibleName: "Deployment",
+        label: "Deployment",
       },
     });
   }
