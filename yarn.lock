@@ -3646,10 +3646,10 @@ codecheck-build-size@^0.0.10:
     gzip-size "^5.0.0"
     lodash "^4.17.11"
 
-codechecks@^0.0.36:
-  version "0.0.36"
-  resolved "https://registry.yarnpkg.com/codechecks/-/codechecks-0.0.36.tgz#76c8b9ffb2552f8b944d0352ed0ac8a9acef63c8"
-  integrity sha512-epBVJ9wjtGG2Wu67QYeiqgTuCKvgOi4eFVn/g7VP7V9asiRP/XwIMpUWZ7OqrfbTISSLf3S5OdM9MkZJjHfiSw==
+codechecks@^0.0.37:
+  version "0.0.37"
+  resolved "https://registry.yarnpkg.com/codechecks/-/codechecks-0.0.37.tgz#d6c6c0799bf1e74e14825b1cb27437f608cfea81"
+  integrity sha512-4NZ10ECPO+kRL5Hw9iGVpOzoiObFlfTKywtclyvIhtigdrokshpZsEt/6XvhXjhrpr8y3g2bETVh4rHmfkujJg==
   dependencies:
     commander "^2.19.0"
     glob "^7.1.3"
