@@ -56,7 +56,7 @@ async function visReg() {
 async function watchLockFiles() {
   const hasPackageLock =
     codeChecks.context.isPr &&
-    codeChecks.context.pr.files.added.filter(f => f === "package-lock.json");
+    codeChecks.context.pr.files.added.filter(f => f === "package-lock.json").length > 0;
 
   if (hasPackageLock) {
     await codeChecks.failure({
