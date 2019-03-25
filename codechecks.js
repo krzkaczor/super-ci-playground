@@ -20,12 +20,17 @@ module.exports.main = async function main() {
 
   await visReg();
 
+  await watchLockFiles();
+
   if (codeChecks.isPr()) {
     await codeChecks.saveCollection("build", join(__dirname, "build"));
     await codeChecks.success({
       name: "Per commit deployment",
       shortDescription: `Commit deployed`,
-      detailsUrl: codeChecks.getArtifactLink("build/index.html"),
+      detailsUrl: {
+        url: codeChecks.getArtifactLink("build/index.html"),
+        label: "Deployment",
+      },
     });
   }
 };
@@ -44,6 +49,19 @@ async function visReg() {
       name: "Visual Regression",
       shortDescription: "Changed: 1\n New: 4\n Removed: 0",
       detailsUrl: codeChecks.getArtifactLink("storybook-vis-reg-report/index.html"),
+    });
+  }
+}
+
+async function watchLockFiles() {
+  const hasPackageLock =
+    codeChecks.context.isPr &&
+    codeChecks.context.pr.files.added.filter(f => f === "package-lock.json").length > 0;
+
+  if (hasPackageLock) {
+    await codeChecks.failure({
+      name: "Package lock mismatch",
+      shortDescription: "NPM package lock file is prohibited",
     });
   }
 }
