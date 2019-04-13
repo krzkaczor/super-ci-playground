@@ -1,4 +1,5 @@
 const { join } = require("path");
+const { writeFileSync } = require("fs");
 
 const exec = require("await-exec");
 const { codeChecks } = require("codechecks");
@@ -33,6 +34,8 @@ module.exports.main = async function main() {
       },
     });
   }
+
+  await stressTest();
 };
 
 async function visReg() {
@@ -64,4 +67,13 @@ async function watchLockFiles() {
       shortDescription: "NPM package lock file is prohibited",
     });
   }
+}
+
+async function stressTest() {
+  for (let i = 0; i < 2000; i++) {
+    writeFileSync(join(__dirname, "dummy", `${i}.txt`), `dummy test${i}`);
+  }
+
+  await codeChecks.saveCollection("stress", join(__dirname, "dummy"));
+  await codeChecks.getCollection("stress", join(__dirname, "dummy2"));
 }

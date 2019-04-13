@@ -40,6 +40,9 @@ jobs:
           key: v1-dep-{{ checksum "yarn.lock" }}
 
       - run:
+          name: "make dir"
+          command: mkdir -p ./dummy
+      - run:
           name: Run tests
           command: yarn test
 
