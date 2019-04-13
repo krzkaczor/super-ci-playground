@@ -2,13 +2,13 @@ const { join } = require("path");
 const { writeFileSync } = require("fs");
 
 const exec = require("await-exec");
-const { codeChecks } = require("codechecks");
-const { buildSize } = require("codecheck-build-size");
+const { codechecks } = require("@codechecks/client");
+const { buildSizeWatcher } = require("@codechecks/build-size-watcher");
 
 const execOptions = { timeout: 100000, cwd: process.cwd(), log: true };
 
 module.exports.main = async function main() {
-  await buildSize({
+  await buildSizeWatcher({
     files: [
       {
         path: "./build/static/js/*.js",
@@ -23,13 +23,13 @@ module.exports.main = async function main() {
 
   await watchLockFiles();
 
-  if (codeChecks.isPr()) {
-    await codeChecks.saveCollection("build", join(__dirname, "build"));
-    await codeChecks.success({
+  if (codechecks.isPr()) {
+    await codechecks.saveCollection("build", join(__dirname, "build"));
+    await codechecks.success({
       name: "Per commit deployment",
       shortDescription: `Commit deployed`,
       detailsUrl: {
-        url: codeChecks.getArtifactLink("build/index.html"),
+        url: codechecks.getArtifactLink("build/index.html"),
         label: "Deployment",
       },
     });
@@ -40,29 +40,29 @@ module.exports.main = async function main() {
 
 async function visReg() {
   await exec("yarn storybook:screenshots", execOptions);
-  await codeChecks.saveCollection("storybook-vis-reg", join(__dirname, "__screenshots__"));
+  await codechecks.saveCollection("storybook-vis-reg", join(__dirname, "__screenshots__"));
 
-  if (codeChecks.isPr()) {
-    await codeChecks.getCollection("storybook-vis-reg", join(__dirname, ".reg/expected"));
+  if (codechecks.isPr()) {
+    await codechecks.getCollection("storybook-vis-reg", join(__dirname, ".reg/expected"));
     await exec("./node_modules/.bin/reg-suit compare", execOptions);
 
-    await codeChecks.saveCollection("storybook-vis-reg-report", join(__dirname, ".reg"));
+    await codechecks.saveCollection("storybook-vis-reg-report", join(__dirname, ".reg"));
 
-    await codeChecks.success({
+    await codechecks.success({
       name: "Visual Regression",
       shortDescription: "Changed: 1\n New: 4\n Removed: 0",
-      detailsUrl: codeChecks.getArtifactLink("storybook-vis-reg-report/index.html"),
+      detailsUrl: codechecks.getArtifactLink("storybook-vis-reg-report/index.html"),
     });
   }
 }
 
 async function watchLockFiles() {
   const hasPackageLock =
-    codeChecks.context.isPr &&
-    codeChecks.context.pr.files.added.filter(f => f === "package-lock.json").length > 0;
+    codechecks.context.isPr &&
+    codechecks.context.pr.files.added.filter(f => f === "package-lock.json").length > 0;
 
   if (hasPackageLock) {
-    await codeChecks.failure({
+    await codechecks.failure({
       name: "Package lock mismatch",
       shortDescription: "NPM package lock file is prohibited",
     });
@@ -74,6 +74,6 @@ async function stressTest() {
     writeFileSync(join(__dirname, "dummy", `${i}.txt`), `dummy test${i}`);
   }
 
-  await codeChecks.saveCollection("stress", join(__dirname, "dummy"));
-  await codeChecks.getCollection("stress", join(__dirname, "dummy2"));
+  await codechecks.saveCollection("stress", join(__dirname, "dummy"));
+  await codechecks.getCollection("stress", join(__dirname, "dummy2"));
 }
